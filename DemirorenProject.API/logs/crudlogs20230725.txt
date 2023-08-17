@@ -1,0 +1,11 @@
+2023-07-25 18:39:17.681 +03:00 [INF] Now listening on: https://localhost:7127
+2023-07-25 18:39:17.733 +03:00 [INF] Now listening on: http://localhost:5211
+2023-07-25 18:39:17.737 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-25 18:39:17.738 +03:00 [INF] Hosting environment: Development
+2023-07-25 18:39:17.738 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-07-25 18:39:26.674 +03:00 [INF] News have been succesfuly retrieved.
+2023-07-25 18:39:42.189 +03:00 [INF] Successfuly created news with the given id (5).
+2023-07-25 18:39:57.807 +03:00 [INF] News with given id (3) have been succesfuly retrieved.
+2023-07-25 18:39:58.708 +03:00 [INF] News with given id (3) have been succesfuly retrieved.
+2023-07-25 18:40:16.204 +03:00 [INF] Successfuly updated news with the given id (5) with values string, zaaag,0. 
+2023-07-25 18:41:48.696 +03:00 [INF] Successfuly deleted news with the given id (1).

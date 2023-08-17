@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DemirorenProject.API</name>
+    </assembly>
+    <members>
+        <member name="M:DemirorenProject.API.Controllers.NewsController.GetNews(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            gets the news based on (if there is any)filters defined by the curent user.
+            </summary>
+            <param name="Category">filtering by category</param>
+            <param name="Contains">word search (in title and/or content)</param>
+            <param name="pageNum">page number user wants to be in</param>
+            <param name="pageSize">number of news that the page contains</param>
+            <returns>an IEnumerable of news</returns>
+        </member>
+        <member name="M:DemirorenProject.API.Controllers.NewsController.GetNewsBypopularity">
+            <summary>
+            gets the popular news
+            </summary>
+            <returns>an IActionResult</returns>
+        </member>
+        <member name="M:DemirorenProject.API.Controllers.NewsController.GetNew(System.Int32)">
+            <summary>
+            gets the news by given id
+            </summary>
+            <param name="id">id of the news that user requests</param>
+            <returns>an IActionResult</returns>
+        </member>
+        <member name="M:DemirorenProject.API.Controllers.NewsController.CreateNews(DemirorenProject.API.Models.NewsForCreation)">
+            <summary>
+            creates a new news object and saves it to database
+            </summary>
+            <param name="newNews">NewsForCreation object needed to create new news</param>
+            <returns>an ActionResult</returns>
+        </member>
+        <member name="M:DemirorenProject.API.Controllers.NewsController.updateNews(System.Int32,DemirorenProject.API.Models.NewsForUpdate)">
+            <summary>
+            updates all values of the news with the given id
+            </summary>
+            <param name="newsId">id of the requested news</param>
+            <param name="updatedNews">NewsForUpdate object to patch the values to retrieved news object</param>
+            <returns>an ActionResult</returns>
+        </member>
+        <member name="M:DemirorenProject.API.Controllers.NewsController.patchNews(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{DemirorenProject.API.Models.NewsForUpdate})">
+            <summary>
+            partialy updates the values of the news with the given id
+            </summary>
+            <param name="newsID">id of the requested news</param>
+            <param name="newsForpatch">NewsForUpdate object to patch the values to retrieved news object</param>
+            <returns>an ActionResult</returns>
+        </member>
+        <member name="M:DemirorenProject.API.Controllers.NewsController.deleteNews(System.Int32)">
+            <summary>
+            deletes the news with the given id
+            </summary>
+            <param name="newsID">id of the news that to be deleted</param>
+            <returns>an ActionResult</returns>
+        </member>
+        <member name="T:DemirorenProject.API.Models.Categories">
+            <summary>
+            categories object
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.Categories.CategoryId">
+            <summary>
+            id of the category(going to be created automaticaly)
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.Categories.CategoryName">
+            <summary>
+            name of the category
+            </summary>
+        </member>
+        <member name="T:DemirorenProject.API.Models.NewsDTO">
+            <summary>
+            news object
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.NewsDTO.Id">
+            <summary>
+            id of the news(going to be created automaticaly)
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.NewsDTO.Title">
+            <summary>
+            title of the news
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.NewsDTO.Content">
+            <summary>
+            content of the news
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.NewsDTO.Date">
+            <summary>
+            news' post date
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.NewsDTO.NoOfViews">
+            <summary>
+            number of views that the news has
+            </summary>
+        </member>
+        <member name="P:DemirorenProject.API.Models.NewsDTO.CategoryID">
+            <summary>
+            catehory of the news
+            </summary>
+        </member>
+    </members>
+</doc>

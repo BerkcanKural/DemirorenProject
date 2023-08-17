@@ -1,0 +1,730 @@
+2023-08-02 14:11:38.029 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:11:38.203 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:11:38.206 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:11:38.207 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:11:38.207 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:13:21.182 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:13:21.255 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:13:21.258 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:13:21.259 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:13:21.260 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:13:41.226 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:13:42.138 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 14:13:49.140 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:13:49.144 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 14:13:56.483 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:13:56.487 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 14:13:56.489 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 14:14:04.878 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:14:04.880 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 14:14:04.881 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 14:31:24.976 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:31:25.017 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:31:25.019 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:31:25.020 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:31:25.020 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:31:31.418 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:31:31.703 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 14:31:31.757 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 14:31:35.652 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:31:35.793 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 14:31:35.982 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IEnumerable`1
+System.Object -> System.Collections.Generic.IEnumerable`1[[DemirorenProject.API.Models.NewsDTO, DemirorenProject.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method77(Closure , Object , IEnumerable`1 , ResolutionContext )
+   at DemirorenProject.API.Controllers.NewsController.GetNew(Int32 id) in C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\Controllers\NewsController.cs:line 39
+   at lambda_method70(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-02 14:32:17.733 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:32:17.810 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:32:17.815 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:32:17.817 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:32:17.818 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:32:21.814 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:32:22.213 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 14:32:26.453 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:32:26.457 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 14:32:29.029 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:32:29.031 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 14:45:24.900 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:45:24.942 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:45:24.945 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:45:24.945 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:45:24.946 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:45:32.512 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:45:32.784 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 14:45:32.838 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 14:45:44.014 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:45:44.154 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 14:47:31.174 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:47:31.217 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:47:31.219 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:47:31.220 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:47:31.221 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:47:36.480 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 14:47:36.487 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 14:47:40.804 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 14:48:11.059 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:48:11.110 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:48:11.113 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:48:11.113 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:48:11.114 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:51:02.523 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:51:02.575 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:51:02.579 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:51:02.580 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:51:02.581 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:54:13.838 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 14:54:13.913 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 14:54:13.916 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 14:54:13.916 +03:00 [INF] Hosting environment: Development
+2023-08-02 14:54:13.917 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 14:54:22.862 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:54:23.127 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 14:54:23.173 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 14:54:39.147 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 14:54:39.325 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__categoryNAME_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryName" = @__categoryNAME_0
+LIMIT 1
+2023-08-02 14:54:39.332 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."CategoryId" = @__category_CategoryId_0
+2023-08-02 15:34:13.771 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 15:34:13.811 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 15:34:13.813 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 15:34:13.814 +03:00 [INF] Hosting environment: Development
+2023-08-02 15:34:13.814 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 15:34:43.537 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:34:43.852 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 6), @p2='?' (DbType = DateTime), @p3='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("CategoryId", "Content", "Date", "Title")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "Id"
+FROM "News"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-02 15:34:43.988 +03:00 [INF] Successfuly created news with the given id ().
+2023-08-02 15:34:50.996 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:34:51.162 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 15:34:51.169 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 15:41:19.790 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 15:41:19.835 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 15:41:19.838 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 15:41:19.838 +03:00 [INF] Hosting environment: Development
+2023-08-02 15:41:19.839 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 15:41:49.402 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:41:49.643 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 2), @p2='?' (DbType = DateTime), @p3='?' (Size = 2)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("CategoryId", "Content", "Date", "Title")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "Id"
+FROM "News"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-02 15:41:49.746 +03:00 [INF] Successfuly created news with the given id ().
+2023-08-02 15:41:57.714 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:41:57.884 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 15:41:57.891 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 15:41:57.909 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 15:42:06.739 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:42:06.741 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 15:42:06.742 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 15:42:20.293 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:42:20.296 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 15:42:20.301 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 15:42:20.305 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 15:42:23.298 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:42:23.299 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 15:42:23.300 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 15:42:40.526 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:42:40.663 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryNAME_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryName" = @__categoryNAME_0
+LIMIT 1
+2023-08-02 15:42:40.669 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."CategoryId" = @__category_CategoryId_0
+2023-08-02 15:49:14.294 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 15:49:14.339 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 15:49:14.341 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 15:49:14.342 +03:00 [INF] Hosting environment: Development
+2023-08-02 15:49:14.342 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 15:49:32.904 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:49:33.144 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryName")
+VALUES (@p0);
+SELECT "CategoryId"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-02 15:49:33.239 +03:00 [INF] Successfuly created the entry.
+2023-08-02 15:49:41.173 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:49:41.338 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 15:49:41.343 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 15:49:41.361 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 15:49:44.551 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:49:44.554 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 15:49:44.555 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 15:55:51.518 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 15:55:51.563 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 15:55:51.566 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 15:55:51.567 +03:00 [INF] Hosting environment: Development
+2023-08-02 15:55:51.567 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 15:56:22.471 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:56:22.717 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 24), @p2='?' (DbType = DateTime), @p3='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("CategoryId", "Content", "Date", "Title")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "Id"
+FROM "News"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-02 15:56:22.798 +03:00 [INF] Successfuly created the news with id 7.
+2023-08-02 15:57:20.442 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 15:57:20.495 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 15:57:20.499 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 15:57:20.500 +03:00 [INF] Hosting environment: Development
+2023-08-02 15:57:20.501 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 15:59:24.567 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 15:59:24.622 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 15:59:24.624 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 15:59:24.625 +03:00 [INF] Hosting environment: Development
+2023-08-02 15:59:24.625 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 15:59:40.581 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 15:59:40.819 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryName")
+VALUES (@p0);
+SELECT "CategoryId"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-02 15:59:40.899 +03:00 [INF] Successfuly created the entry.
+2023-08-02 15:59:40.921 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtRouteResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-02 16:00:04.450 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:00:04.623 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:00:04.628 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:10:20.307 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:10:20.354 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:10:20.357 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:10:20.358 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:10:20.358 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 16:10:31.715 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:10:31.981 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 16:10:32.034 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 16:11:14.272 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:11:14.413 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 16:11:14.513 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 10), @p2='?' (DbType = DateTime), @p3='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "CategoryId" = @p0, "Content" = @p1, "Date" = @p2, "Title" = @p3
+WHERE "Id" = @p4;
+SELECT changes();
+2023-08-02 16:11:14.565 +03:00 [INF] Successfuly updated news with the given id (5) with values UpdateTest, UpdateTest,3. 
+2023-08-02 16:11:22.756 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:11:22.758 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 16:11:22.759 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 16:11:22.763 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 16:11:28.719 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:11:28.721 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 16:11:28.722 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 16:15:11.459 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:15:11.510 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:15:11.512 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:15:11.513 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:15:11.513 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 16:15:29.476 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:15:29.879 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 16:15:29.983 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+CategoriesForUpdate -> NewsEN
+DemirorenProject.API.Models.CategoriesForUpdate -> DemirorenProject.API.Entities.NewsEN
+   at lambda_method59(Closure , CategoriesForUpdate , NewsEN , ResolutionContext )
+   at DemirorenProject.API.Controllers.categoriesController.updateCategory(Int32 categoryID, CategoriesForUpdate updateValues) in C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\Controllers\categoriesController.cs:line 76
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-02 16:15:52.615 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:15:52.620 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:15:52.625 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:15:52.643 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 16:15:56.857 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:15:56.859 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:15:56.861 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:16:51.496 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:16:51.549 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:16:51.553 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:16:51.554 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:16:51.555 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 16:17:09.897 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:17:10.310 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 16:17:10.453 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 3), @p2='?' (DbType = DateTime), @p3='?' (Size = 1)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "CategoryId" = @p0, "Content" = @p1, "Date" = @p2, "Title" = @p3
+WHERE "Id" = @p4;
+SELECT changes();
+2023-08-02 16:17:10.504 +03:00 [INF] Successfuly updated news with the given id (4) with values a, sts,0. 
+2023-08-02 16:17:17.447 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:17:17.450 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 16:17:17.451 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 16:17:17.471 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 16:17:21.067 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:17:21.069 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 16:17:21.070 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 16:19:32.427 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:19:32.481 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:19:32.483 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:19:32.484 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:19:32.485 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 16:19:53.173 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:19:53.582 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__categoryID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryId" = @__categoryID_0
+LIMIT 1
+2023-08-02 16:19:53.713 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 18)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Categories" SET "CategoryName" = @p0
+WHERE "CategoryId" = @p1;
+SELECT changes();
+2023-08-02 16:19:53.756 +03:00 [INF] Successfuly updated category.
+2023-08-02 16:19:59.812 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:19:59.816 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:19:59.817 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:19:59.837 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-08-02 16:20:02.960 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:20:02.962 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:20:02.964 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:30:16.176 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:30:16.230 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:30:16.233 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:30:16.234 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:30:16.235 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 16:31:50.707 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:31:51.120 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 16:31:51.273 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "Title" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-02 16:31:51.330 +03:00 [INF] Successfuly updated news with the given id (3) with values patchTest, This is the content for politics news,3. 
+2023-08-02 16:31:57.244 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:31:57.247 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 16:43:47.319 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:43:47.369 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:43:47.372 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:43:47.373 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:43:47.374 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 16:44:49.074 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:44:49.451 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__categoryNAME_0='?' (Size = 1)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryName" = @__categoryNAME_0
+LIMIT 1
+2023-08-02 16:44:49.574 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method28(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   at System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at System.Linq.Expressions.UnaryExpression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at DemirorenProject.API.Services.NewsService.DemirorenProject.API.Services.InterfaceNewsService.getNewsByCategoryAsync(String categoryNAME) in C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\Services\NewsService.cs:line 40
+   at DemirorenProject.API.Controllers.categoriesController.GetNewByCategory(String categoryName) in C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\Controllers\categoriesController.cs:line 38
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-02 16:45:06.152 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:45:06.178 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:45:06.216 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:45:21.365 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:45:21.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryId" = @__categoryID_0
+LIMIT 1
+2023-08-02 16:45:21.468 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Categories" SET "CategoryName" = @p0
+WHERE "CategoryId" = @p1;
+SELECT changes();
+2023-08-02 16:45:25.612 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:45:25.614 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:45:25.616 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:58:31.685 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:58:31.732 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:58:31.734 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:58:31.735 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:58:31.735 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 16:58:40.058 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:58:40.340 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:58:40.388 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:58:49.211 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:58:49.354 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__categoryID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryId" = @__categoryID_0
+LIMIT 1
+2023-08-02 16:58:49.365 +03:00 [INF] Successfuly deleted the category with given id 4
+2023-08-02 16:58:51.846 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:58:51.860 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__categoryNAME_0='?' (Size = 1)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryName" = @__categoryNAME_0
+LIMIT 1
+2023-08-02 16:58:51.932 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method68(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitBinary(BinaryExpression node)
+   at System.Linq.Expressions.BinaryExpression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at System.Linq.Expressions.UnaryExpression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at DemirorenProject.API.Services.NewsService.DemirorenProject.API.Services.InterfaceNewsService.getNewsByCategoryAsync(String categoryNAME) in C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\Services\NewsService.cs:line 40
+   at DemirorenProject.API.Controllers.categoriesController.GetNewByCategory(String categoryName) in C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\Controllers\categoriesController.cs:line 38
+   at lambda_method61(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-02 16:58:56.213 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:58:56.214 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:58:56.216 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:59:04.076 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:59:04.080 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryId" = @__categoryID_0
+LIMIT 1
+2023-08-02 16:59:04.082 +03:00 [INF] Successfuly deleted the category with given id 4
+2023-08-02 16:59:09.485 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:59:09.487 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:59:09.489 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:59:20.101 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:59:20.103 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryId" = @__categoryID_0
+LIMIT 1
+2023-08-02 16:59:20.104 +03:00 [INF] Successfuly deleted the category with given id 5
+2023-08-02 16:59:25.740 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:59:25.741 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 16:59:25.743 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 16:59:32.286 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 16:59:32.290 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 16:59:32.301 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 16:59:54.239 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 16:59:54.289 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 16:59:54.291 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 16:59:54.292 +03:00 [INF] Hosting environment: Development
+2023-08-02 16:59:54.292 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 17:00:08.525 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:00:08.934 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__categoryID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryId" = @__categoryID_0
+LIMIT 1
+2023-08-02 17:00:09.078 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Categories"
+WHERE "CategoryId" = @p0;
+SELECT changes();
+2023-08-02 17:00:09.128 +03:00 [INF] Successfuly deleted the category with given id 4
+2023-08-02 17:00:12.747 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:00:12.750 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 17:00:12.752 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 17:00:20.014 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:00:20.018 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryId" = @__categoryID_0
+LIMIT 1
+2023-08-02 17:00:20.020 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Categories"
+WHERE "CategoryId" = @p0;
+SELECT changes();
+2023-08-02 17:00:20.043 +03:00 [INF] Successfuly deleted the category with given id 5
+2023-08-02 17:00:23.686 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:00:23.688 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+2023-08-02 17:00:23.690 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-08-02 17:00:46.447 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-02 17:00:46.491 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-02 17:00:46.493 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 17:00:46.494 +03:00 [INF] Hosting environment: Development
+2023-08-02 17:00:46.494 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-02 17:00:53.517 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:00:53.786 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 17:00:53.841 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-02 17:01:04.272 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:01:04.416 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 17:01:04.506 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "News"
+WHERE "Id" = @p0;
+SELECT changes();
+2023-08-02 17:01:04.555 +03:00 [INF] Successfuly deleted news with the given id (4).
+2023-08-02 17:01:06.258 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:01:06.263 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 17:01:06.265 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "News"
+WHERE "Id" = @p0;
+SELECT changes();
+2023-08-02 17:01:06.319 +03:00 [INF] Successfuly deleted news with the given id (5).
+2023-08-02 17:01:07.942 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:01:07.944 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 17:01:07.946 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "News"
+WHERE "Id" = @p0;
+SELECT changes();
+2023-08-02 17:01:07.965 +03:00 [INF] Successfuly deleted news with the given id (6).
+2023-08-02 17:01:12.059 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:01:12.061 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 17:01:12.063 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "News"
+WHERE "Id" = @p0;
+SELECT changes();
+2023-08-02 17:01:12.081 +03:00 [INF] Successfuly deleted news with the given id (7).
+2023-08-02 17:01:14.139 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:01:14.141 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-02 17:01:17.693 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-02 17:01:17.694 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."Title"
+FROM "News" AS "n"
+2023-08-02 17:01:17.696 +03:00 [INF] News have been succesfuly retrieved.

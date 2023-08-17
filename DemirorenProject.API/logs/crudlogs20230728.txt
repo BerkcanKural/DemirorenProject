@@ -1,0 +1,346 @@
+2023-07-28 16:16:39.659 +03:00 [INF] Now listening on: https://localhost:7127
+2023-07-28 16:16:39.793 +03:00 [INF] Now listening on: http://localhost:5211
+2023-07-28 16:16:39.795 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-28 16:16:39.796 +03:00 [INF] Hosting environment: Development
+2023-07-28 16:16:39.796 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-07-28 16:16:48.643 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-07-28 16:17:01.857 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-07-28 16:17:01.862 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-07-28 16:17:08.605 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-07-28 16:17:48.865 +03:00 [INF] Category with the id of 3 have been successfuly deleted.
+2023-07-28 16:17:50.054 +03:00 [INF] Category with the id of 3 cannot be found.
+2023-07-28 16:17:58.507 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-07-28 16:17:58.508 +03:00 [WRN] No output formatter was found for content types '["text/plain"]' to write the response.
+2023-07-28 16:18:04.489 +03:00 [INF] Categories have been succesfuly retrieved.
+2023-07-28 16:18:15.176 +03:00 [INF] News have been succesfuly retrieved.
+2023-07-28 17:45:11.916 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 17:47:39.792 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 17:47:40.087 +03:00 [INF] Executed DbCommand (133ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-07-28 17:47:40.240 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-07-28 17:47:40.248 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 17:47:40.249 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 17:47:40.258 +03:00 [INF] Applying migration '20230728144512_NewsDatabaseInitialMigration'.
+2023-07-28 17:47:40.279 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "CategoryId" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "CategoryName" TEXT NOT NULL
+);
+2023-07-28 17:47:40.279 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "News" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_News" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NOT NULL,
+    "Content" TEXT NOT NULL,
+    "Date" TEXT NOT NULL,
+    "CategoryId" INTEGER NULL,
+    CONSTRAINT "FK_News_Categories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "Categories" ("CategoryId")
+);
+2023-07-28 17:47:40.279 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_News_CategoryId" ON "News" ("CategoryId");
+2023-07-28 17:47:40.279 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230728144512_NewsDatabaseInitialMigration', '6.0.0');
+2023-07-28 17:59:23.513 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:01:15.491 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:01:15.720 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:01:15.732 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:04:16.181 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:04:16.329 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:04:16.342 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:04:24.667 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:04:24.811 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:04:24.825 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:06:11.583 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:06:19.742 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:06:47.584 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:08:50.019 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:08:50.168 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:09:43.956 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:11:30.778 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:12:49.002 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:12:49.088 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:12:49.283 +03:00 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-07-28 18:12:49.285 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:12:49.286 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:12:49.296 +03:00 [INF] Applying migration '20230728151130_testdb1'.
+2023-07-28 18:12:49.318 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "CategoryId" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "CategoryName" TEXT NOT NULL
+);
+2023-07-28 18:12:49.318 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "News" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_News" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NOT NULL,
+    "Content" TEXT NOT NULL,
+    "Date" TEXT NOT NULL,
+    "CategoryId" INTEGER NULL,
+    CONSTRAINT "FK_News_Categories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "Categories" ("CategoryId")
+);
+2023-07-28 18:12:49.318 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_News_CategoryId" ON "News" ("CategoryId");
+2023-07-28 18:12:49.318 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230728151130_testdb1', '6.0.0');
+2023-07-28 18:16:12.717 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:16:12.802 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:16:12.808 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:16:12.818 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:16:12.827 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-07-28 18:17:02.985 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:17:24.475 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:17:24.560 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:17:24.566 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:17:24.576 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:17:24.586 +03:00 [INF] Applying migration '20230728151703_updatedatabase'.
+2023-07-28 18:17:24.623 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (1, 'sports');
+2023-07-28 18:17:24.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (2, 'science');
+2023-07-28 18:17:24.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (3, 'politics');
+2023-07-28 18:17:24.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (1, NULL, 'This is the content for sports news', '2023-07-28 18:17:03.0190244', 'Test');
+2023-07-28 18:17:24.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (2, NULL, 'This is the content for science news', '2023-07-28 18:17:03.0190255', 'Test2');
+2023-07-28 18:17:24.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (3, NULL, 'This is the content for politics news', '2023-07-28 18:17:03.0190256', 'Test3');
+2023-07-28 18:17:24.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (4, NULL, 'This is the content for another politics news', '2023-07-28 18:17:03.0190258', 'Test4');
+2023-07-28 18:17:24.624 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230728151703_updatedatabase', '6.0.0');
+2023-07-28 18:24:14.305 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:24:14.536 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:24:14.548 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:24:34.238 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:24:39.047 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:24:59.076 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:24:59.244 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-07-28 18:24:59.388 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-07-28 18:24:59.395 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:24:59.397 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:24:59.405 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-07-28 18:25:09.505 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:25:22.572 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:25:22.661 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:25:22.667 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:25:22.679 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:25:22.688 +03:00 [INF] Applying migration '20230728152509_test1'.
+2023-07-28 18:25:22.728 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "CategoryId" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "CategoryName" TEXT NOT NULL
+);
+2023-07-28 18:25:22.728 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "News" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_News" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NOT NULL,
+    "Content" TEXT NOT NULL,
+    "Date" TEXT NOT NULL,
+    "CategoryId" INTEGER NOT NULL,
+    CONSTRAINT "FK_News_Categories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "Categories" ("CategoryId") ON DELETE CASCADE
+);
+2023-07-28 18:25:22.728 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_News_CategoryId" ON "News" ("CategoryId");
+2023-07-28 18:25:22.728 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230728152509_test1', '6.0.0');
+2023-07-28 18:25:46.313 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:25:46.401 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:25:46.407 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:25:46.417 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:25:46.426 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-07-28 18:25:58.257 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:26:05.757 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:26:05.843 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:26:05.849 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:26:05.859 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:26:05.869 +03:00 [INF] Applying migration '20230728152558_addvalues'.
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (1, 'sports');
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (2, 'science');
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (3, 'politics');
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (1, 1, 'This is the content for sports news', '2023-07-28 18:25:58.291958', 'Test');
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (2, 2, 'This is the content for science news', '2023-07-28 18:25:58.2919592', 'Test2');
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (3, 3, 'This is the content for politics news', '2023-07-28 18:25:58.2919593', 'Test3');
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (4, 3, 'This is the content for another politics news', '2023-07-28 18:25:58.2919594', 'Test4');
+2023-07-28 18:26:05.907 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230728152558_addvalues', '6.0.0');
+2023-07-28 18:26:15.918 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:26:16.004 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:26:16.010 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:26:16.020 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:26:16.029 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-07-28 18:54:21.172 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:54:25.587 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:54:49.469 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:54:58.076 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 18:54:58.219 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-07-28 18:54:58.336 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-07-28 18:54:58.344 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 18:54:58.345 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 18:54:58.354 +03:00 [INF] Applying migration '20230728155449_DATABASECREATİON'.
+2023-07-28 18:54:58.373 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "CategoryId" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "CategoryName" TEXT NOT NULL
+);
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "News" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_News" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NOT NULL,
+    "Content" TEXT NOT NULL,
+    "Date" TEXT NOT NULL,
+    "CategoryId" INTEGER NOT NULL
+);
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (1, 'sports');
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (2, 'science');
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Categories" ("CategoryId", "CategoryName")
+VALUES (3, 'politics');
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (1, 1, 'This is the content for sports news', '2023-07-28 18:54:49.5021389', 'Test');
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (2, 2, 'This is the content for science news', '2023-07-28 18:54:49.5021402', 'Test2');
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (3, 3, 'This is the content for politics news', '2023-07-28 18:54:49.5021402', 'Test3');
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("Id", "CategoryId", "Content", "Date", "Title")
+VALUES (4, 3, 'This is the content for another politics news', '2023-07-28 18:54:49.5021404', 'Test4');
+2023-07-28 18:54:58.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230728155449_DATABASECREATİON', '6.0.0');
+2023-07-28 18:59:27.942 +03:00 [INF] Now listening on: https://localhost:7127
+2023-07-28 18:59:27.991 +03:00 [INF] Now listening on: http://localhost:5211
+2023-07-28 18:59:27.994 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-28 18:59:27.995 +03:00 [INF] Hosting environment: Development
+2023-07-28 18:59:27.995 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-07-28 19:00:23.674 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 19:00:23.767 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 19:00:23.773 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 19:00:23.784 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-07-28 19:00:23.793 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-07-28 19:00:43.826 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 19:01:17.710 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-07-28 19:01:17.923 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-07-28 19:01:17.935 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";

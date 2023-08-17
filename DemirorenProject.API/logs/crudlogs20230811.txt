@@ -1,0 +1,19 @@
+2023-08-11 00:04:28.094 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-11 00:04:28.163 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-11 00:04:28.164 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-11 00:04:28.165 +03:00 [INF] Hosting environment: Development
+2023-08-11 00:04:28.165 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-11 00:05:07.530 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-11 00:05:30.262 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-11 00:07:03.395 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-11 00:07:03.440 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-11 00:07:03.441 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-11 00:07:03.442 +03:00 [INF] Hosting environment: Development
+2023-08-11 00:07:03.442 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-11 00:07:42.963 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-11 00:07:43.201 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 10), @p1='?' (Size = 88), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
