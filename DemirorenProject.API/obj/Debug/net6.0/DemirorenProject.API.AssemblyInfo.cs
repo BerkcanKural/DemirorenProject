@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemirorenProject.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+520e026d7024625b5b90c5f3eaf6e81a127402ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemirorenProject.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DemirorenProject.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

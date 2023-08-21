@@ -1,4 +1,5 @@
 ﻿using DemirorenProject.API.Entities;
+using DemirorenProject.API.Models;
 
 namespace DemirorenProject.API.Services
 {
@@ -23,6 +24,8 @@ namespace DemirorenProject.API.Services
         void RemoveNewsAsync(NewsEN news);
 
         Task<bool> SaveChangesAsync();
+        bool IsRead(int newsid, int userID);
+        Task addNewsToReadList(int id, int userID);
        
     }
 }

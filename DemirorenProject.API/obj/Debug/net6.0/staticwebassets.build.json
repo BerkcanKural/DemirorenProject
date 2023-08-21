@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Im+NStXEgKsu7X33XGzgsHzVeM458amibG+rDe9tfbU=",
+  "Hash": "ze1tkUOVvV8/UDDSOn0iFIntLCfd1+hM8ouhHd9FUVg=",
   "Source": "DemirorenProject.API",
   "BasePath": "_content/DemirorenProject.API",
   "Mode": "Default",
@@ -17,57 +17,6 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\20140303_124239.jpg",
-      "SourceId": "DemirorenProject.API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\",
-      "BasePath": "_content/DemirorenProject.API",
-      "RelativePath": "upload/20140303_124239.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\upload\\20140303_124239.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\cat-4.jpg",
-      "SourceId": "DemirorenProject.API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\",
-      "BasePath": "_content/DemirorenProject.API",
-      "RelativePath": "upload/cat-4.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\upload\\cat-4.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\image.png",
-      "SourceId": "DemirorenProject.API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\",
-      "BasePath": "_content/DemirorenProject.API",
-      "RelativePath": "upload/image.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\upload\\image.png"
-    },
-    {
       "Identity": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\product-1.jpg",
       "SourceId": "DemirorenProject.API",
       "SourceType": "Discovered",
@@ -83,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\product-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\product-2.jpg",
+      "SourceId": "DemirorenProject.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\",
+      "BasePath": "_content/DemirorenProject.API",
+      "RelativePath": "upload/product-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\product-2.jpg"
     }
   ]
 }

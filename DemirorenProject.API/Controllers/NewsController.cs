@@ -20,11 +20,9 @@ namespace DemirorenProject.API.Controllers
         private readonly ILogger _logger;
         private readonly InterfaceNewsService newsService;
         private readonly IMapper _mapper;
-        private readonly NewsContext _newsContext;
         const int maxPageSize = 20;
 
-        public NewsController(ILogger<NewsController> logger, InterfaceNewsService newsDB, IMapper mapper, NewsContext context) {
-            _newsContext = context??throw new ArgumentNullException(nameof(context));
+        public NewsController(ILogger<NewsController> logger, InterfaceNewsService newsDB, IMapper mapper ) {
             _logger = logger??throw new ArgumentNullException(nameof(logger));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             newsService = newsDB ?? throw new ArgumentNullException();
@@ -48,39 +46,26 @@ namespace DemirorenProject.API.Controllers
                 pageSize = maxPageSize;
             }                                                                                                       
             var (news,paginationMetaData) = await newsService.GetNewsAsync(Category,Contains,pageNum,pageSize);
+            
             Response.Headers.Add("X-pagination", JsonSerializer.Serialize(paginationMetaData));
+            
             if (news == null) { return NotFound(); }
             
-            var readNews = _newsContext.NewsRead.Where(p => p.UserID == userID).ToList();
-            var c = _mapper.Map<IEnumerable<NewsDTOReadReceipt>>(news);
-            //var col = new List<NewsDTOReadReceipt>();
-            if (readNews != null)
+            var NewsReadReceipt = _mapper.Map<IEnumerable<NewsDTOReadReceipt>>(news);
+            
+            
+            foreach (var item in NewsReadReceipt)
             {
-                foreach (var read in c)
+                if(newsService.IsRead(item.Id, userID))
                 {
-                    //var a = _mapper.Map<NewsDTOReadReceipt>(read);
-                    foreach (var item in readNews)
-                    {
-                        if (item.NewsID == read.Id)
-                        {
-                            read.IsRead = true;
-                            break;
-                        }
-                        read.IsRead = false;
-                    }
-                    //col.Add(a);
-                }
-            }
-            else
-            {
-                foreach(var item in c)
-                {
-                    item.IsRead = false;
+                    item.IsRead = true;
+                }else { 
+                    item.IsRead = false; 
                 }
             }
             
             _logger.LogInformation($"News have been succesfuly retrieved.");
-            return Ok(c/*col*/); /*_mapper.Map<IEnumerable<NewsDTO>>(news)*/
+            return Ok(NewsReadReceipt); 
         }
         /// <summary>
         /// gets the popular news
@@ -117,23 +102,16 @@ namespace DemirorenProject.API.Controllers
 
             selectedNew.NoOfViews += 1;
             var finalnew = _mapper.Map<NewsDTOReadReceipt>(selectedNew);
-            var read = new NewsReadEN
+            
+            if (newsService.IsRead(finalnew.Id, userID))
             {
-                NewsID = id,
-                UserID = userID
-            };
-            var readNews = _newsContext.NewsRead.Where(p => p.UserID == userID).ToList();
-            for (int i = 0; i < readNews.Count;i++)
-            {
-                if (readNews[i].NewsID == id)
-                {
-                    finalnew.IsRead = true;
-                    return Ok(finalnew);
-                }
-
+                finalnew.IsRead = true;
             }
-            finalnew.IsRead = false;
-            _newsContext.NewsRead.Add(read);
+            else
+            {
+                finalnew.IsRead = false;
+                await newsService.addNewsToReadList(id, userID);
+            }
 
 
             await newsService.SaveChangesAsync();

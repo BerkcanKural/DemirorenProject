@@ -1,0 +1,1095 @@
+2023-08-21 11:17:47.746 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 11:17:47.839 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 11:17:47.840 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 11:17:47.840 +03:00 [INF] Hosting environment: Development
+2023-08-21 11:17:47.840 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 11:18:33.417 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:18:34.108 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 11:20:34.497 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:20:34.522 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 11:20:34.529 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:20:34.565 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+2023-08-21 11:20:34.578 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:20:52.392 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:20:52.396 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__CategoryName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryName" = @__CategoryName_0
+LIMIT 1
+2023-08-21 11:20:52.436 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+WHERE "n"."CategoryId" = @__category_CategoryId_0
+2023-08-21 11:20:52.459 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:20:52.467 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 11:20:52.468 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 11:20:52.470 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."CategoryId" = @__category_CategoryId_0
+LIMIT @__p_2 OFFSET @__p_1
+2023-08-21 11:20:52.472 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:21:55.565 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:21:55.619 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+2023-08-21 11:21:55.622 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:21:55.625 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 11:21:55.625 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 11:21:55.628 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 8), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+LIMIT @__p_2 OFFSET @__p_1
+2023-08-21 11:21:55.629 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:22:03.533 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:22:03.534 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+2023-08-21 11:22:03.536 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:22:03.538 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 9), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+LIMIT @__p_2 OFFSET @__p_1
+2023-08-21 11:22:03.540 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:22:10.093 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:22:10.095 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+2023-08-21 11:22:10.097 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:22:10.098 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 8), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+LIMIT @__p_2 OFFSET @__p_1
+2023-08-21 11:22:10.100 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:22:14.199 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:22:14.201 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+2023-08-21 11:22:14.203 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:22:14.205 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 9), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+LIMIT @__p_2 OFFSET @__p_1
+2023-08-21 11:22:14.207 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:22:25.889 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:22:25.891 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+2023-08-21 11:22:25.893 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:22:25.895 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__Contains_0='?' (Size = 4), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ((@__Contains_0 = '') OR (instr("n"."Title", @__Contains_0) > 0)) OR ((@__Contains_0 = '') OR (instr("n"."Content", @__Contains_0) > 0))
+LIMIT @__p_2 OFFSET @__p_1
+2023-08-21 11:22:25.897 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:23:05.665 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:23:05.667 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 11:23:05.669 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:23:05.671 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+2023-08-21 11:23:05.673 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:25:00.520 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 11:25:00.562 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 11:25:00.562 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 11:25:00.563 +03:00 [INF] Hosting environment: Development
+2023-08-21 11:25:00.563 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 11:25:08.424 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:25:08.819 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 11:25:19.356 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:25:19.372 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 11:25:19.379 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:25:19.407 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+2023-08-21 11:25:19.419 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:26:45.583 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:26:45.586 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 11:27:22.675 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 11:30:35.803 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 11:30:38.810 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:30:38.814 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__CategoryName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."CategoryId", "c"."CategoryName"
+FROM "Categories" AS "c"
+WHERE "c"."CategoryName" = @__CategoryName_0
+LIMIT 1
+2023-08-21 11:30:38.824 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: X-pagination
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.AddValueUnknown(String key, StringValues value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.AddValueFast(String key, StringValues value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.System.Collections.Generic.IDictionary<System.String,Microsoft.Extensions.Primitives.StringValues>.Add(String key, StringValues value)
+   at DemirorenProject.API.Controllers.NewsController.GetNews(String Category, String Contains, Int32 pageNum, Int32 pageSize) in C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\Controllers\NewsController.cs:line 51
+   at lambda_method79(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-21 11:30:38.874 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32), @__Contains_1='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+WHERE ("n"."CategoryId" = @__category_CategoryId_0) AND (((@__Contains_1 = '') OR (instr("n"."Title", @__Contains_1) > 0)) OR ((@__Contains_1 = '') OR (instr("n"."Content", @__Contains_1) > 0)))
+2023-08-21 11:31:38.266 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32), @__Contains_1='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ("n"."CategoryId" = @__category_CategoryId_0) AND (((@__Contains_1 = '') OR (instr("n"."Title", @__Contains_1) > 0)) OR ((@__Contains_1 = '') OR (instr("n"."Content", @__Contains_1) > 0)))
+2023-08-21 11:31:39.925 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32), @__Contains_1='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ("n"."CategoryId" = @__category_CategoryId_0) AND (((@__Contains_1 = '') OR (instr("n"."Title", @__Contains_1) > 0)) OR ((@__Contains_1 = '') OR (instr("n"."Content", @__Contains_1) > 0)))
+2023-08-21 11:32:26.383 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 11:32:26.384 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 11:32:26.386 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32), @__Contains_1='?' (Size = 4), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ("n"."CategoryId" = @__category_CategoryId_0) AND (((@__Contains_1 = '') OR (instr("n"."Title", @__Contains_1) > 0)) OR ((@__Contains_1 = '') OR (instr("n"."Content", @__Contains_1) > 0)))
+LIMIT @__p_2 OFFSET @__p_2
+2023-08-21 11:33:23.965 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 11:33:23.981 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__category_CategoryId_0='?' (DbType = Int32), @__Contains_1='?' (Size = 4), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE ("n"."CategoryId" = @__category_CategoryId_0) AND (((@__Contains_1 = '') OR (instr("n"."Title", @__Contains_1) > 0)) OR ((@__Contains_1 = '') OR (instr("n"."Content", @__Contains_1) > 0)))
+LIMIT @__p_2 OFFSET @__p_2
+2023-08-21 11:33:23.983 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 11:36:11.136 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 11:36:11.248 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 26), @p2='?' (DbType = DateTime), @p3='?' (DbType = Int32), @p4='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "News" ("CategoryId", "Content", "Date", "NoOfViews", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT "Id"
+FROM "News"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 11:36:11.358 +03:00 [INF] Successfuly created the news with id 8.
+2023-08-21 13:08:16.427 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:08:16.481 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:08:16.483 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:08:16.484 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:08:16.484 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:08:51.730 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:08:52.221 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 13:09:13.403 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:09:13.437 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:09:13.451 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:09:13.478 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 13:09:13.479 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 13:09:13.481 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_0 OFFSET @__p_0
+2023-08-21 13:09:13.493 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 13:09:15.990 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:09:15.993 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:09:15.996 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:09:15.998 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 13:09:15.998 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 13:09:16.000 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 13:09:16.002 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 13:09:17.223 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:09:17.225 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:09:17.227 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:09:17.228 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 13:09:17.229 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 13:09:20.003 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:09:20.005 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:09:20.006 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:09:20.008 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 13:09:20.010 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 13:09:22.250 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:09:22.251 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:09:22.253 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:09:22.255 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_0 OFFSET @__p_0
+2023-08-21 13:09:22.257 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 13:09:29.251 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:09:29.252 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:09:29.254 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:09:29.256 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_0 OFFSET @__p_0
+2023-08-21 13:09:29.257 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 13:09:30.607 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:09:30.609 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:09:30.610 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:09:30.612 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 13:09:30.614 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 13:11:38.949 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:11:38.990 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:11:38.990 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:11:38.991 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:11:38.991 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:13:22.510 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:13:22.885 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 13:17:27.705 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:17:27.828 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 15), @p1='?' (Size = 21), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:20:40.192 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:20:40.237 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:20:40.238 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:20:40.238 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:20:40.239 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:21:08.935 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:21:09.176 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 21), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:23:25.910 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:23:25.950 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:23:25.951 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:23:25.951 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:23:25.952 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:24:18.092 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:24:18.323 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 19), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:26:40.745 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:26:40.823 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:26:40.824 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:26:40.824 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:26:40.824 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:26:51.905 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:26:52.141 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 19), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:30:32.171 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:30:32.214 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:30:32.215 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:30:32.215 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:30:32.216 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:31:04.736 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:31:04.967 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 19), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:31:52.959 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:31:52.961 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 8), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:33:41.191 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:33:41.247 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:33:41.248 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:33:41.249 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:33:41.250 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:34:10.078 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:34:10.316 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 38), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:34:54.905 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:34:54.948 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:34:54.949 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:34:54.949 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:34:54.949 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:35:10.272 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:35:10.515 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:37:21.022 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:37:21.065 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:37:21.065 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:37:21.066 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:37:21.066 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:37:41.667 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:37:41.910 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 20), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:39:25.144 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:39:25.190 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:39:25.191 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:39:25.191 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:39:25.192 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:39:36.546 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:39:36.786 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 22), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsImages" ("filename", "filepath", "newsID")
+VALUES (@p0, @p1, @p2);
+SELECT "Id"
+FROM "NewsImages"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 13:55:14.643 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 13:55:14.690 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 13:55:14.691 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 13:55:14.691 +03:00 [INF] Hosting environment: Development
+2023-08-21 13:55:14.692 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 13:55:38.577 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:55:39.092 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 13:55:52.772 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:55:52.801 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 13:55:52.933 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "Title" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 13:55:53.034 +03:00 [INF] Successfuly updated news with the given id (2) with values patchTest2, This is the content for science news,2. 
+2023-08-21 13:56:04.264 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 13:56:04.283 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 13:56:04.290 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 13:56:04.311 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 13:56:04.313 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 13:56:04.315 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 13:56:04.317 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 15:45:49.311 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 15:45:49.359 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 15:45:49.360 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 15:45:49.361 +03:00 [INF] Hosting environment: Development
+2023-08-21 15:45:49.361 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 15:46:17.792 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:46:18.266 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 15:46:32.290 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:46:32.325 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 15:46:32.358 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 15:46:32.360 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 15:46:32.363 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 15:46:32.377 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:46:32.385 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:46:32.387 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:46:32.388 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 15:47:17.226 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:47:17.238 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:47:17.244 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:47:17.357 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:47:17.368 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 15:47:20.295 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:47:20.297 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:47:20.299 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:47:24.495 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:47:24.496 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 15:47:24.498 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 15:47:24.500 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:47:24.502 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:47:24.503 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:47:24.505 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 15:52:01.599 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 15:52:01.647 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 15:52:01.648 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 15:52:01.649 +03:00 [INF] Hosting environment: Development
+2023-08-21 15:52:01.649 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 15:52:07.076 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:52:07.467 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 15:52:19.137 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:52:19.166 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:52:19.198 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:52:19.283 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:52:22.089 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:52:22.093 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:52:22.095 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:52:22.097 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:52:24.987 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:52:24.989 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:52:24.991 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:52:25.017 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:52:25.025 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 15:52:28.500 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:52:28.502 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:52:28.503 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:52:28.505 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:57:02.197 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 15:57:02.242 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 15:57:02.242 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 15:57:02.243 +03:00 [INF] Hosting environment: Development
+2023-08-21 15:57:02.243 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 15:57:15.996 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:57:16.389 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 15:57:27.131 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:57:27.161 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:57:27.193 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:57:27.278 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:57:32.449 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:57:32.454 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:57:32.455 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:57:32.483 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:57:32.489 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 15:57:35.758 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:57:35.761 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:57:35.763 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:57:35.765 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:57:43.226 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:57:43.244 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 15:57:43.264 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 15:57:43.265 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 15:57:43.268 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 15:57:43.270 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:57:43.271 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:57:43.273 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:57:43.275 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 15:58:45.863 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:58:45.865 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 15:58:45.867 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 15:58:45.868 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:58:45.870 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:58:45.872 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:58:45.873 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 15:58:57.007 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:58:57.009 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:58:57.011 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:58:57.013 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:58:57.014 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 15:58:59.126 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:58:59.127 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 15:58:59.129 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:58:59.131 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 15:59:01.064 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 15:59:01.065 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 15:59:01.067 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 15:59:01.068 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:59:01.070 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:59:01.072 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 15:59:01.074 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 16:00:38.274 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 16:00:38.316 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 16:00:38.317 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 16:00:38.318 +03:00 [INF] Hosting environment: Development
+2023-08-21 16:00:38.318 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 16:00:58.110 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:00:58.343 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 14), @p1='?' (Size = 13), @p2='?' (Size = 13), @p3='?' (Size = 4), @p4='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("FirstName", "LastName", "Password", "Role", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT "UserId"
+FROM "Users"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 16:01:04.619 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:01:04.912 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 16:01:19.267 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:01:19.288 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 16:01:19.307 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 16:01:19.308 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 16:01:19.312 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 16:01:19.327 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:19.331 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:19.333 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:19.335 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 16:01:26.526 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:01:26.538 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 16:01:26.542 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:26.560 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 16:01:26.563 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 16:01:29.386 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:01:29.388 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 16:01:29.390 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 16:01:29.392 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:29.394 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:29.396 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:29.397 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 16:01:34.245 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:01:34.248 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 16:01:34.250 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:34.252 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 16:01:34.253 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 16:01:37.453 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:01:37.455 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 16:01:37.456 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 16:01:37.458 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:37.460 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:37.461 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:01:37.463 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 16:05:47.644 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 16:05:47.688 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 16:05:47.690 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 16:05:47.690 +03:00 [INF] Hosting environment: Development
+2023-08-21 16:05:47.690 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 16:05:57.173 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:05:57.559 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 16:06:05.326 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:06:05.359 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 16:06:05.392 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 16:06:05.393 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 16:06:05.396 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 16:06:05.410 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:06:05.418 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:06:05.420 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:06:05.421 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 16:06:13.322 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:06:13.334 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 16:06:13.339 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:06:13.451 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 16:06:13.461 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 16:06:14.859 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:06:14.861 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 16:06:14.863 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:06:14.865 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 16:06:14.867 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2023-08-21 16:06:51.125 +03:00 [INF] Now listening on: https://localhost:7127
+2023-08-21 16:06:51.169 +03:00 [INF] Now listening on: http://localhost:5211
+2023-08-21 16:06:51.170 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-21 16:06:51.171 +03:00 [INF] Hosting environment: Development
+2023-08-21 16:06:51.172 +03:00 [INF] Content root path: C:\Users\USER\Desktop\DemirorenProject\DemirorenProject.API\
+2023-08-21 16:06:55.602 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:06:55.982 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__username_0='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."UserId", "u"."FirstName", "u"."LastName", "u"."Password", "u"."Role", "u"."UserName"
+FROM "Users" AS "u"
+WHERE "u"."UserName" = @__username_0
+LIMIT 1
+2023-08-21 16:07:00.254 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:07:00.291 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "News" AS "n"
+2023-08-21 16:07:00.325 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 16:07:00.326 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-08-21 16:07:00.329 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+LIMIT @__p_1 OFFSET @__p_0
+2023-08-21 16:07:00.343 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:07:00.350 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:07:00.352 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:07:00.354 +03:00 [INF] News have been succesfuly retrieved.
+2023-08-21 16:07:04.630 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:07:04.642 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 16:07:04.648 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:07:04.734 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 16:07:17.257 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:07:17.259 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 16:07:17.261 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:07:17.263 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 16:07:19.606 +03:00 [INF] Entity Framework Core 6.0.0 initialized 'NewsContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.0' with options: None
+2023-08-21 16:07:19.608 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__newsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."CategoryId", "n"."Content", "n"."Date", "n"."NoOfViews", "n"."Title"
+FROM "News" AS "n"
+WHERE "n"."Id" = @__newsID_0
+LIMIT 1
+2023-08-21 16:07:19.611 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "n"."Id", "n"."NewsID", "n"."UserID"
+FROM "NewsRead" AS "n"
+WHERE "n"."UserID" = @__userID_0
+2023-08-21 16:07:19.639 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "News" SET "NoOfViews" = @p0
+WHERE "Id" = @p1;
+SELECT changes();
+2023-08-21 16:07:19.646 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "NewsRead" ("NewsID", "UserID")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "NewsRead"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using SQLitePCL;
 using System.Security.AccessControl;
-
+using DemirorenProject.API.Models;
 namespace DemirorenProject.API.Services
 {
     public class NewsService : InterfaceNewsService
@@ -37,9 +37,10 @@ namespace DemirorenProject.API.Services
 
             if (string.IsNullOrEmpty(CategoryName )&& string.IsNullOrWhiteSpace(Contains))
             {
-                var count = collection.Count();
-                var metadata = new PaginationMetadata(count,pageSize,pageNum);
-                return (collection,metadata);  // check if any filter or search paramater have applied.If not,return retrieved news
+                var ItemCount = await collection.CountAsync();
+                var ToReturn = collection.Skip(pageSize * (pageNum - 1)).Take(pageSize);                               //add skip method TODO
+                var metadata = new PaginationMetadata(ItemCount, pageSize,pageNum);
+                return (ToReturn, metadata);  // check if any filter or search paramater have applied.If not,return retrieved news
             }
 
           
@@ -91,6 +92,32 @@ namespace DemirorenProject.API.Services
         async Task<bool> InterfaceNewsService.SaveChangesAsync()
         {
             return(await _newsContext.SaveChangesAsync() >= 0);
+        }
+        bool InterfaceNewsService.IsRead(int newsid, int userID)
+        {
+            var readNews = _newsContext.NewsRead.Where(p => p.UserID == userID).ToList();
+
+
+            if(readNews != null)
+            {
+                foreach (var read in readNews)
+                {
+                    if (read.NewsID == newsid)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return(false);
+        }
+        async Task InterfaceNewsService.addNewsToReadList(int newsid, int userID)
+        {
+            var read = new NewsReadEN
+            {
+                NewsID = newsid,
+                UserID = userID
+            };
+            _newsContext.NewsRead.Add(read);
         }
     }
 }

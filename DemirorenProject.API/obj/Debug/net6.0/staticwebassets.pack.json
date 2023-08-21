@@ -1,20 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\20140303_124239.jpg",
-      "PackagePath": "staticwebassets\\upload\\20140303_124239.jpg"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\cat-4.jpg",
-      "PackagePath": "staticwebassets\\upload\\cat-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\image.png",
-      "PackagePath": "staticwebassets\\upload\\image.png"
-    },
-    {
       "Id": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\product-1.jpg",
       "PackagePath": "staticwebassets\\upload\\product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\DemirorenProject\\DemirorenProject.API\\wwwroot\\upload\\product-2.jpg",
+      "PackagePath": "staticwebassets\\upload\\product-2.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.DemirorenProject.API.Microsoft.AspNetCore.StaticWebAssets.props",
